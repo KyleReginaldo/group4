@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <title>Shoes Shop</title>
+</head>
+
+<body>
+
+    <div class="nav-bar">
+        <div>
+         <a href="index.html"></a><img src="assets/logos/logo.png" style="border: 0;" height="90" alt=""></a>
+        </div>
+          <nav>
+            <ul>
+              <a href="index.html"><li>Home</li></a>
+              <a href="index.html#cart"><li>cart</li></a>
+              <a href="profile.html"><li>Profile</li></a>
+            </ul>
+          </nav>
+      </div>
+
+      <div class="detail-container">
+          <div class="small-img">
+             <div>
+                <img src="assets/products/jordan/AJ1.jpg" height="100" class="convert-small-img">
+             </div>
+             <div>
+                <img src="assets/products/jordan/AJ1B.jpg" height="100" class="convert-small-img">
+             </div>
+             <div>
+                <img src="assets/products/jordan/AJ1T.jpg" height="100" class="convert-small-img">
+             </div>
+          </div>
+
+          <div class="__displayRow">
+              <div class="col-2">
+                  <img src="assets/products/jordan/AJ.png" height="308" id="convert-large-img">
+              </div>
+              <div class="col-3">
+                  <h2 class="item-name">Air Jordan 1 Zoom Cmft</h2>
+                  <p style="letter-spacing: 2px;" class="item-price">₱ 7,345</p>
+                  <div class="__detailbtn">
+                    <a href="index.html#exclusive">Back</a>
+                    <a class="shop-item-button" href="index.html#cart">Add to Cart</a>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+
+</body>
+<script>
+    
+  var atLargeImage = document.getElementById("convert-large-img");
+  var tLargeImage = document.getElementsByClassName("convert-small-img");
+
+    tLargeImage[0].onclick = function ()
+{
+    atLargeImage.src = tLargeImage[0].src;
+}
+    tLargeImage[1].onclick = function ()
+{
+    atLargeImage.src = tLargeImage[1].src;
+}
+    tLargeImage[2].onclick = function ()
+{
+    atLargeImage.src = tLargeImage[2].src;
+}
+
+</script>
+</html>
