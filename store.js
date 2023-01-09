@@ -40,18 +40,27 @@ function updateCartTotal(){
     var total = 0
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i]
+        console.log(cartRow)
         var priceElement = cartRow.getElementsByClassName('shop-item-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
         var price = parseInt(priceElement.innerText.replace('₱', '').replace(',', ''))
         var quantity = quantityElement.value
         subtotal = total + (price * quantity)
         total = total + (price * quantity) + 200
+        
+    
     }
 
     if(subtotal > 20000){
        total = total - 200
     }
-
+    if (quantity < 1) {
+        console.log('mababa sir')
+        
+    }
+    console.log(quantity)
+    console.log(subtotal)
+   
     document.getElementsByClassName('cart-sub-price')[0].innerText = '₱ ' + numberWithCommas(subtotal)
     document.getElementsByClassName('cart-total-price')[0].innerText = '₱ ' + numberWithCommas(total)
 }
@@ -64,7 +73,9 @@ function quantityChanged(event){
     var input = event.target
     if(isNaN(input.value) || input.value <= 0){
         input.value = 1
+       
     }
+   
     updateCartTotal()
 }
 
