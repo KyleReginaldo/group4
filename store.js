@@ -5,7 +5,7 @@ if (document.readyState == 'loading') {
 }
 
 
-function ready(){
+function ready() {
 
     var removeCartItemButtons = document.getElementsByClassName('remove-item')
     for (var remove = 0; remove < removeCartItemButtons.length; remove++) {
@@ -21,81 +21,74 @@ function ready(){
 
     var addToCartButtons = document.getElementsByClassName('add-to-cart')
     for (var add = 0; add < addToCartButtons.length; add++) {
+
         var addtocart = addToCartButtons[add]
         addtocart.addEventListener('click', addToCartClick)
     }
 
 }
 
-
 function removeCartItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
-    updateCartTotal()
+    updateCartTotal(event)
 }
 
-function updateCartTotal(){
+function updateCartTotal(event) {
     var addToCartItemButtons = document.getElementsByClassName('td')[0]
     var cartRows = addToCartItemButtons.getElementsByClassName('cart-Info')
+    var subtotal = 0
     var total = 0
     for (var i = 0; i < cartRows.length; i++) {
         var cartRow = cartRows[i]
-        console.log(cartRow)
         var priceElement = cartRow.getElementsByClassName('shop-item-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
         var price = parseInt(priceElement.innerText.replace('₱', '').replace(',', ''))
         var quantity = quantityElement.value
-        subtotal = total + (price * quantity)
-        total = total + (price * quantity) + 200
-        
-    
+        total = total + (price * quantity)
     }
 
-    if(subtotal > 20000){
-       total = total - 200
-    }
+
     if (quantity < 1) {
-        console.log('mababa sir')
-        
+        quantity = 1
+        removeCartItem(event)
+    } else {
+        console.log('false 1')
     }
-    console.log(quantity)
-    console.log(subtotal)
-   
-    document.getElementsByClassName('cart-sub-price')[0].innerText = '₱ ' + numberWithCommas(subtotal)
+
     document.getElementsByClassName('cart-total-price')[0].innerText = '₱ ' + numberWithCommas(total)
+
 }
 
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ", ");
 }
 
-function quantityChanged(event){
+function quantityChanged(event) {
     var input = event.target
-    if(isNaN(input.value) || input.value <= 0){
+    if (isNaN(input.value) || input.value >= 0) {
         input.value = 1
-       
+        console.log(input.value)
     }
-   
-    updateCartTotal()
+    updateCartTotal(event)
 }
 
-function addToCartClick(event){
+function addToCartClick(event) {
     var addcart = event.target
     var shopitem = addcart.parentElement
     var itemname = shopitem.getElementsByClassName('item-name')[0].innerText
     var itemprice = shopitem.getElementsByClassName('add-to-cart')[0].innerText
     var itemimage = shopitem.getElementsByClassName('item-image')[0].src
     AddtoDisplayCart(itemname, itemimage, itemprice)
-    updateCartTotal()
-    console.log(updateCartTotal())
+    updateCartTotal(event)
 }
 
-function AddtoDisplayCart(itemname, itemimage, itemprice){
+function AddtoDisplayCart(itemname, itemimage, itemprice) {
     var toCart = document.createElement('div')
     var cartitem = document.getElementsByClassName('td')[0]
     var cartitemname = document.getElementsByClassName('shop-item-title')
-    for (var i = 0; i < cartitemname.length; i++){
-        if(cartitemname[i].innerText == itemname){
+    for (var i = 0; i < cartitemname.length; i++) {
+        if (cartitemname[i].innerText == itemname) {
             alert('item is in the cart already!')
             return
         }
