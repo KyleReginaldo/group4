@@ -164,6 +164,7 @@ html{
 .exclusive-container img{
     height: 35vh;
     background-color: transparent;
+    
 }
 
 /* detail.html design */
@@ -206,6 +207,7 @@ html{
 .toHome{
     margin-bottom: 90px;
     text-align: center;
+    background-color: white;
 }
 
 .toHome a{
@@ -213,14 +215,19 @@ html{
     padding-left: 40px;
     padding-right: 40px;
     font-size: 15px;
-    border: 1px solid white;
+    border: 1px solid black;
     border-radius: 60px;
 }
+.fa-arrow-up{
+    color: black;
+    }
+.fa-arrow-up:hover{
+        color: #826F66;
+        
+    }
 
-.toHome a:hover{
-    transition: 700ms;
-    background-color: #826F66;
-}
+
+
 
 /* Cart Container Design design */
 
@@ -332,7 +339,7 @@ button:hover{
 }
 
 .profile{
-    opacity: 50%;
+    opacity: 50%;   
 }
 
 .profile:hover{
@@ -343,4 +350,28 @@ button:hover{
 .overlay:hover{
     transition: 600ms;
     opacity: 1;
+}
+.checkout{
+    font-family: 'Montserrat', sans-serif;
+    padding: 7px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color:white;
+    color: #000000;
+    text-align: center;
+    margin: auto;
+    align-items: center;
+    align-self: center;
+    }
+.btn{
+    text-align: center;
+    display: flex;
+}
+.checkout:hover{
+    transition: 700ms;
+    background-color:black;
+    color: white;
+    border: 1px solid #826F66;
 }
