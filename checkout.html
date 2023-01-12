@@ -33,23 +33,47 @@
                     <h4>$20.000</h4>
                 </div>
                 <hr class="divider">
+                <br>
                 <div class=" TEXT">
-                    <div class="text1"><h3>Sub total</h3><h3>P 38,990</h3> </div>
-                    <div class="text2"><h3>Shipping</h3><h3>P 300</h3></div>
+                    <div class="text1"><h3>Sub total</h3><h3>P38,990</h3> </div>
+                    <br>
+                    <div class="text2"><h3>Shipping</h3><h3>P300</h3></div>
+                    <br>
                     <hr border-top: 5px solid #095484;>
-                    <div class="text3"><h4>TOTAL</h4><h4>39,290</h4></div>
+                    <br>
+                    <div class="text3"><h4>TOTAL</h4><h4>P39,290</h4></div>
                 </div>
             </div>
         </div>
         <div class="address">
-            <h3>Address</h3>       
-            <h4>San Juan 1 City of General Trias Cavite</h4>          
+            <h2 style="font: size 100px;">Address</h2>   
+            <p style="font-weight: bold;" >Pasong kawayan ll, Heneral Uno Subd  <br> B 7 L 21, City of General Trias Cavite</p>         
             <h3>Payment Mode</h3>
-            <h4>Cash on Delivery(COD)</h4>
+            <p style="font-weight: bold;">Cash on Delivery(COD)</p>
             <!-- <a class="btn" href="index.html">Place Order</a> -->
-            <a class="btn" href="done.html">Place Order</a>
-            
+            <div class="container1">
+                <button type="submit" class="btn" onclick="openPopup()">Place Order</button>
+                <div class="popup" id="popup">
+                    <img src="404-tick.png">
+                    <h2>Thank You</h2>
+                    <p>Your order has been successfully submitted. Thanks!</p>
+                    <button type="button" onclick="window.location.href='done.html'">OK</button>
+                    
+                </div>
+            </div>
+            <script>
+                let popup = document.getElementById("popup");
+        
+                function openPopup() {
+                    popup.classList.add("open-popup")
+                }
+        
+                function closePopup() {
+                    popup.classList.remove("open-popup")
+                }
+            </script>
         </div>
     </div>
+    
 </body>
 </html>

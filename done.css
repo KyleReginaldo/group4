@@ -21,7 +21,7 @@
 }
 .btn:hover{
     transition: 700ms;
-      background-color:black;
-      color: white;
-      border: 1px solid #826F66;
-  }
+    background-color:black;
+    color: white;
+    border: 1px solid #826F66;
+}
