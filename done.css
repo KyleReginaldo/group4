@@ -1,0 +1,27 @@
+.rectangle {
+    height:200px;
+    width: 400px;
+    background-color: bisque;
+    border-radius: 16px;
+    text-align: center;
+    margin: 0 auto;
+    align-content: center;
+    padding-top: 16px;
+}
+.btn{
+    font-family: 'Montserrat', sans-serif;
+    padding: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: bisque;
+    color: black;
+    text-decoration: none;
+}
+.btn:hover{
+    transition: 700ms;
+    background-color:black;
+    color: white;
+    border: 1px solid #826F66;
+}

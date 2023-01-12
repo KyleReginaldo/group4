@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="categories">
+        <div class="smallcontainer"> 
+            <div class="column">
+                <div class="col-3">
+                    <img src="images/Air Jordan 1 Retro High OG Court Purple.jpg">
+                    <h2>Air Jordan 1 Retro High OG court Purple</h2>
+                    <br>
+                    <h4>44UK - 10 US</h4>
+                    <h4>$20.000</h4>
+                </div>
+                <hr>
+                <div class="col-3">
+                    <img src="images/Air Jordan 1 Retro High OG.jpg">
+                    <h2>Air Jordan 1 Retro High OG court Purple</h2>
+                    <br><h4>44UK - 10 US</h4><br>
+                    <h4>$20.000</h4>
+                </div>
+                <hr>
+            <div class="col-3">
+                    <img src="images/Dunk Low Black White.jpg">
+                    <h2>Air Jordan 1 Retro High OG court Purple</h2>
+                    <br><h4>44UK - 10 US</h4><br>
+                    <h4>$20.000</h4>
+                </div>
+                <hr class="divider">
+                <br>
+                <div class=" TEXT">
+                    <div class="text1"><h3>Sub total</h3><h3>P38,990</h3> </div>
+                    <br>
+                    <div class="text2"><h3>Shipping</h3><h3>P300</h3></div>
+                    <br>
+                    <hr border-top: 5px solid #095484;>
+                    <br>
+                    <div class="text3"><h4>TOTAL</h4><h4>P39,290</h4></div>
+                </div>
+            </div>
+        </div>
+        <div class="address">
+            <h2 style="font: size 100px;">Address</h2>   
+            <p style="font-weight: bold;" >Pasong kawayan ll, Heneral Uno Subd  <br> B 7 L 21, City of General Trias Cavite</p>         
+            <h3>Payment Mode</h3>
+            <p style="font-weight: bold;">Cash on Delivery(COD)</p>
+            <!-- <a class="btn" href="index.html">Place Order</a> -->
+            <div class="container1">
+                <button type="submit" class="btn" onclick="openPopup()">Place Order</button>
+                <div class="popup" id="popup">
+                    <img src="404-tick.png">
+                    <h2>Thank You</h2>
+                    <p>Your order has been successfully submitted. Thanks!</p>
+                    <button type="button" onclick="window.location.href='done.html'">OK</button>
+                    
+                </div>
+            </div>
+            <script>
+                let popup = document.getElementById("popup");
+        
+                function openPopup() {
+                    popup.classList.add("open-popup")
+                }
+        
+                function closePopup() {
+                    popup.classList.remove("open-popup")
+                }
+            </script>
+        </div>
+    </div>
+    
+</body>
+</html>
